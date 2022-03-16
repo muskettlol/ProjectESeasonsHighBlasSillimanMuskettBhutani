@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -13,21 +14,14 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Establishing run test button
         Button RunTestButton = findViewById(R.id.RunTestButton);
-        ClickListener boopHearer = new ClickListener();
-        RunTestButton.setOnClickListener(boopHearer);
+        TextView multiLineTV = findViewById(R.id.multiLineTV);
+        ClickListener clickListener = new ClickListener(multiLineTV);
+        RunTestButton.setOnClickListener(clickListener);
     }
 
-    public static void main(String args[]) {
-
-    }
-    
-    public class ClickListener implements View.OnClickListener {
 
 
-    @Override
-    public void onClick(View view) {
 
-    }
-}
 }
